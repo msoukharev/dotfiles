@@ -1,0 +1,10 @@
+if macos(); then
+
+    export PROMPT="%F{9}%n%f %F{14}%~%f %F{11}%#%f "
+
+elif linux(); then
+
+    # Add machine name, usually for remote
+    export PROMPT="%F{9}%n%f %F{10}%m%f %F{14}%~%f %F{11}%#%f "
+
+fi
