@@ -4,7 +4,7 @@ if macos(); then
 
 elif linux(); then
 
-    # Add machine name, usually for remote
+    # Add machine name, since I use linux as my remote instances mostly
     export PROMPT="%F{9}%n%f %F{10}%m%f %F{14}%~%f %F{11}%#%f "
 
 fi
