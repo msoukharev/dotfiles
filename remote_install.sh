@@ -1,14 +1,27 @@
+abort() {
+    echo "${1} Abort."
+    return 1
+}
+
+##################################################################
+
 echo "Remote installing msoukharev/dotfiles!"
-git clone https://github.com/msoukharev/dotfiles ~/.dotfiles
-if [ -d "~/.dotfiles" ]; then
+
+export DOTFILE="~/.dotfile"
+
+abort "Something is already installed at ${DOTFILE}."
+
+git clone https://github.com/msoukharev/dotfile ~/.dotfile
+
+if [ -d $DOTFILE ]; then
     echo "Successfully installed dotfiles!"
 else
     echo "Failed to install dotfiles."
 fi
 
-export ZSH_DOTFILES="~/.dotfiles/"
+if [-d "~/.dotfile"]
 
-chmod -R 755 $ZSH_DOTFILES
+chmod -R 755 $DOTFILE
 
 echo "Setting up the environment."
-sh $ZSH_DOTFILES/install.sh
+sh $DOTFILE/src/install.sh

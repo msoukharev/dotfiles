@@ -1,19 +1,17 @@
 # Dotfiles
 
-## Context
+Simple and comprehensive shell environment customization tool for Mac and Linux.
+
+## Why
 
 My primary machine is a Mac. All my other remote servers run Debian. For all of these environments, I use zsh as my primary shell.
 
 My terminal workflow includes API endpoint exploration, light automation scripting and administering my remote servers, including the web server that hosts my website.
 
-## Why?
+## Zsh vs Bash
 
-Everyone needs to work in a terminal, me included. At first, I used a builtin macOS terminal. Later, I switched to iTerm for more capabilities and builtin tmux, which proved to be very useful in administering my remote servers. Then, I wanted even more customization.
+I use zsh as opposed to bash due to its superior performance, and zsh being the default shell for Mac. 
 
-[Oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh) proved to be unnecessarily complex for me, though. Nevertheless, it served as an inspiration for this project.
+Using Bash is preferred if you want to insure compatibility accross different Linux instances, with other people's scripts and environments, or if you are required to use Bash at school or at work for any reason.
 
-## Getting started
-
-> **WARNING**: Unless the commit is tagged, install at your own discretion.
-
-Right now, you would have to download dotfiles into your home directory and run install. 
+If you use Mac, want to squeeze out more performance, better autocomplete or a more modern shell in general, check out Zshell. It is easy to transition from Bash, and most if not all of your Bash scripts will work in Zshell. I hope this tool will help you with your zsh environment customization.
