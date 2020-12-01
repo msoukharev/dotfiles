@@ -33,7 +33,6 @@ fi
 
 
 fprint "# The content was automatically generated during installation of msoukharev/dotfiles." zshrc
-fprint "# The original file was moved to ~/.zshrc.original." zshrc
 fgap 2 zshrc
 
 
