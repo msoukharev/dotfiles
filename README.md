@@ -1,8 +1,8 @@
-# Dotfiles
+# :black_circle: Dotfiles
 
 Simple and comprehensive shell environment customization tool for Mac and Linux.
 
-## Why
+## Motivation :muscle:
 
 My primary machine is a Mac. All my other remote servers run Debian. For all of these environments, I use zsh as my primary shell.
 
