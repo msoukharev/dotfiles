@@ -1,17 +1,18 @@
-alias gita="git add ."
+alias agit='/usr/bin/git'
+alias git='/usr/local/bin/git'
 
-gc() {
+function gc() {
     git commit -m $@
 }
 
-ga() {
+function ga() {
     git add $@
 }
 
-gac() {
-    git add . ; git commit -m $@
+function gps() {
+    git push $@
 }
 
-gps() {
-    git push $@
+function gpl() {
+    git pull $@
 }

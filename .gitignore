@@ -1,1 +1,5 @@
-/dotfiles/remote*
+/Dotfiles/remote*
+/Dotfiles/languages
+/Dotfiles/path
+# Directory of zshrc_backups
+/Data/zshrc_backups/*
