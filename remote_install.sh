@@ -1,27 +1,35 @@
-abort() {
+#!/bin/bash
+
+__abort() {
     echo "${1} Abort."
-    return 1
+    exit 1
 }
 
-##################################################################
+DOTFILE_PATH="${HOME}/.dotfile"
+setup_script=$DOTFILE_PATH/setup.bash
 
-echo "Remote installing msoukharev/dotfiles!"
+echo "Remote installing msoukharev/dotfile.git"
 
-export DOTFILE="~/.dotfile"
-
-abort "Something is already installed at ${DOTFILE}."
-
-git clone https://github.com/msoukharev/dotfile ~/.dotfile
-
-if [ -d $DOTFILE ]; then
-    echo "Successfully installed dotfiles!"
-else
-    echo "Failed to install dotfiles."
+if [ -d $DOTFILE_PATH ]; then
+    echo "Overwriting ${DOTFILE_PATH} directory"
+    sudo rm -rf $DOTFILE_PATH
+    mkdir -p $DOTFILE_PATH
 fi
 
-if [-d "~/.dotfile"]
+git clone https://github.com/msoukharev/dotfile.git $DOTFILE_PATH
 
-chmod -R 755 $DOTFILE
+if [ -d $DOTFILE_PATH ]; then
+    echo "Successfully installed dotfiles!"
+else
+    __abort "Failed to install dotfiles."
+fi
 
-echo "Setting up the environment."
-sh $DOTFILE/src/install.sh
+echo "Changing permossion settings scripts executable"
+sudo chmod -R 755 $DOTFILE_PATH >/dev/null 2>&1 || __abort "Could not give access permission for ${DOTFILE_PATH}."
+echo
+
+echo "Success!"
+echo
+echo
+echo "Running setup..."
+. $setup_script

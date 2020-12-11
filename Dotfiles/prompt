@@ -1,8 +1,8 @@
-if macos(); then
+if __macos; then
 
     export PROMPT="%F{9}%n%f %F{14}%~%f %F{11}%#%f "
 
-elif linux(); then
+elif __linux; then
 
     # Add machine name, since I use linux as my remote instances mostly
     export PROMPT="%F{9}%n%f %F{10}%m%f %F{14}%~%f %F{11}%#%f "
