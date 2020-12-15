@@ -1,7 +1,4 @@
 # User-specific 
-/Dotfiles/remote
-/Dotfiles/terminal
-/Dotfiles/path
-/Dotfiles/languages
+/Dotfiles/User/*
 # Directory of zshrc_backups
 /Data/zshrc_backups/*
