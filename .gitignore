@@ -1,4 +1,5 @@
 # User-specific 
 /Dotfiles/User/*
-# Directory of zshrc_backups
-/Data/zshrc_backups/*
+
+# Directory for user dotfile backups
+/Data/Backups/*
