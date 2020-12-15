@@ -6,7 +6,7 @@ function dotfile() {
 
     case $_command in
         update)
-            zsh $dotfile_commands_path/update.zsh $DOTFILE_PATH
+            zsh $dotfile_commands_path/update.zsh
             ;;   
         # [bB])   
         #     # handle 'b'
