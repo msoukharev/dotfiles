@@ -1,10 +1,43 @@
-if __macos; then
+function __git_prompt() {
+    branch=`__git_current_branch`
+    case $branch in 
+    "main" | "master")
+        color=33
+    ;;
+    "dev")
+        color=48
+    ;;
+    *)
+        color=208
+    ;;
+    esac
+    if [ $branch ]; then
+        echo " %F{$color}-[$branch]%f"
+    else
+        :
+    fi
+    ##git rev-parse --abbrev-ref HEAD >/dev/null 2>&1 && echo " [$(git rev-parse --abbrev-ref HEAD)]" || echo ""
+}
 
-    export PROMPT="%F{9}%n%f %F{14}%~%f %F{11}%#%f "
+function __shortname() {
+    cut -c 1-${1} <<< $USERNAME
+}
 
-elif __linux; then
+setopt PROMPT_SUBST
 
-    # Add machine name, since I use linux as my remote instances mostly
-    export PROMPT="%F{9}%n%f %F{10}%m%f %F{14}%~%f %F{11}%#%f "
+function __set_prompt() {
+    
+    if __macos; then
 
-fi
+        export PROMPT="%F{9}$(__shortname 6)%f %F{14}%~%f$(__git_prompt) %F{11}%#%f "
+
+    elif __linux; then
+
+        # Add machine name, since I use linux as my remote instances mostly
+        export PROMPT="%F{9}$(__shortname 6)%f %F{10}%m%f %F{14}%~%f%F{3}$(__git_current_branch)%f %F{11}%#%f "
+
+    fi
+    
+}
+
+precmd_functions+=(__set_prompt)
