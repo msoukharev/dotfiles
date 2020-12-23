@@ -31,5 +31,5 @@ echo
 echo "Success!"
 echo
 echo
-echo "Running setup..."
-. $setup_script
+echo "If you do not have a suitable .zshrc \ 
+and .zshenv files for this project, pleasre run 'source $DOTFILE_PATH/setup.zsh'" 

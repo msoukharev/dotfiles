@@ -1,5 +1,5 @@
-# Source dotfiles
-__dotfile_source_path Dotfiles
+# Source configs
+__dotfile_source_path Config
 
 # Dynamic prompt string reevaluation
 setopt PROMPT_SUBST
