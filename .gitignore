@@ -1,5 +1,10 @@
 # User-specific 
-/Dotfiles/User/*
+/Dotfiles/*
+!/Dotfiles/Env
+/Dotfiles/Env/*
+
+# Themes
+/Themes/User/*
 
 # Directory for user dotfile backups
 /Data/Backups/*

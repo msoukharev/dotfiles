@@ -1,10 +1,3 @@
-# Takes a path to file and appends text to it
-function __fappend() {
-    file=$1
-    shift
-    echo $@ >> $file
-}
-
 # Takes a message, reads a yes/no argument
 # True if yes
 # False if no

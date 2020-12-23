@@ -1,6 +1,6 @@
 #!/bin/bash
 
-__abort() {
+abort_msg() {
     echo "${1} Abort."
     exit 1
 }
@@ -21,11 +21,11 @@ git clone https://github.com/msoukharev/dotfile.git $DOTFILE_PATH
 if [ -d $DOTFILE_PATH ]; then
     echo "Successfully installed dotfiles!"
 else
-    __abort "Failed to install dotfiles."
+    abort_msg "Failed to install dotfiles."
 fi
 
 echo "Changing permossion settings scripts executable"
-sudo chmod -R 755 $DOTFILE_PATH >/dev/null 2>&1 || __abort "Could not give access permission for ${DOTFILE_PATH}."
+sudo chmod -R 755 $DOTFILE_PATH >/dev/null 2>&1 || abort_msg "Could not give access permission for ${DOTFILE_PATH}."
 echo
 
 echo "Success!"

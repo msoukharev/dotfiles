@@ -1,10 +1,10 @@
 function dotfile() {
 
     dotfile_commands_path=$DOTFILE_/commands
-    _command=$1
+    command=$1
     shift
-
-    case $_command in
+    
+    case $command in
         update)
             zsh $dotfile_commands_path/update.zsh
             ;;   
@@ -16,7 +16,7 @@ function dotfile() {
         #     exit 0
         #     ;;
         *)  
-            echo "Unvalid command."
+            echo "Invalid command."
             ;;
     esac
 

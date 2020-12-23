@@ -1,0 +1,49 @@
+function __git_prompt() {
+    branch=`__git_current_branch`
+    case $branch in 
+    "main" | "master")
+        color=33
+    ;;
+    "dev")
+        color=48
+    ;;
+    *)
+        color=208
+    ;;
+    esac
+    if [ $branch ]; then
+        echo " %F{$color}-[$branch]%f"
+    else
+        :
+    fi
+    ##git rev-parse --abbrev-ref HEAD >/dev/null 2>&1 && echo " [$(git rev-parse --abbrev-ref HEAD)]" || echo ""
+}
+
+function __shortname() {
+    cut -c 1-${1} <<< $USERNAME
+}
+
+if __macos; then
+
+    export PROMPT='%F{9}$(__shortname 6)%f %F{14}%~%f$(__git_prompt) %F{11}%#%f '
+
+elif __linux; then
+
+    # Add machine name, since I use linux as my remote instances mostly
+    export PROMPT='%F{9}$(__shortname 6)%f %F{10}%m%f %F{14}%~%f%F{3}$(__git_current_branch)%f %F{11}%#%f '
+
+fi
+
+if __macos; then
+
+    export CLICOLOR=1
+    export LSCOLORS=GxFxCxDxBxegedabagaced
+    alias ls="ls -G"
+
+elif __linux; then
+
+    export CLI_COLOR=1
+    export LS_COLORS="di=1;36:ln=1;35:so=1;32:pi=1;33:ex=1;31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=34;43"
+    alias ls="ls --color=auto"
+
+fi
