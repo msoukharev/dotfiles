@@ -8,7 +8,7 @@ function __flags() {
 }
 
 # Extracts non-flags from the arguments
-function __posits() {
+function __positionals() {
     posits=()
     for arg in $@; do
         grep "^-" <<< $arg >/dev/null 2>&1 || posits=($posits $arg)
