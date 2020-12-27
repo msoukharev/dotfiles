@@ -24,7 +24,7 @@ function __shortname() {
 
 if __macos; then
 
-    export PROMPT='%F{9}$(__shortname 6)%f %F{14}%~%f$(__git_prompt) %F{11}∷%f '
+    export PROMPT='%F{9}$(__shortname 6)%f %F{14}%~%f$(__git_prompt) %F{11}%#%f '
     export LSCOLORS=GxFxCxDxBxegedabagaced
 
 elif __linux; then
