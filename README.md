@@ -1,4 +1,4 @@
-# :black_circle: Dotfiles
+# :black_circle: Dotfile
 
 Simple and comprehensive shell environment customization tool for Mac and Linux.
 
