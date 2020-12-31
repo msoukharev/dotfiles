@@ -15,3 +15,14 @@ function __positionals() {
     done
     echo $posits
 }
+
+# Retreive the last argument
+function __last() {
+    arg=""
+    for arg in $@; do :; done; echo "$arg"
+    if [ -z ${arg} ]; then
+        return 0
+    else
+        return 1
+    fi
+}
