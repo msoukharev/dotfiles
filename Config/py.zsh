@@ -1,29 +1,8 @@
-# Conveniences for pyenv
-function penv() {
-
-    function _activate() {
-        source env/bin/activate
-    }
-
-    function _deactivate() {
-        deactivate
-    }
-
-    subcommand=$1
-    shift
-    case $subcommand in
-    "a" | "act")
-        _activate
-    ;;
-    "d" | "deact")
-        _deactive
-    ;;
-    *)
-        echo "Unsupported usage. Supports only 'act' and 'deact'."
-    ;;
-    esac
-
-}
+# Conveniences for venv
+alias venv="python3 -m venv"
+alias venvs="venv --system-site-packages"
+alias va="source env/bin/activate $@"
+alias vd="deactivate"
 
 # Conveniences for pip
 alias pp="pip"
