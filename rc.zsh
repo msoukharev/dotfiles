@@ -11,6 +11,9 @@ fi
 # Source config
 __dotfile_source_path Config
 
+# Source dotfile sources
+__dotfile_source_path Sources
+
 # ITERM integration
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 export TERM=xterm-256color

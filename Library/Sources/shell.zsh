@@ -26,3 +26,33 @@ function __last() {
         return 1
     fi
 }
+
+# Check if the element is inside array
+function __isin() {
+    str=$1
+    shift
+    for arg in $@; do
+        [[ $str == $arg ]] && return 0
+    done
+    return 1
+}
+
+# Takes a message, reads a yes/no argument
+# True if yes
+# False if no
+# If wring input, will ask again
+function __yesno() {
+    echo -n "${@} [y/N]: "
+    read ans
+    case $ans in 
+        y | Y)
+            return 0
+            ;;
+        n | N)
+            return 1
+            ;;
+        *)
+            __yesno $@
+            ;;
+    esac
+}
