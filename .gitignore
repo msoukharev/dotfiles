@@ -1,10 +1,5 @@
-# User-specific 
-/Dotfiles/*
-!/Dotfiles/Env
-/Dotfiles/Env/*
+# These themes can be add by user
+/themes/user/*
 
-# Themes
-/Themes/User/*
-
-# Directory for user dotfile backups
-/Data/Backups/*
+# Backups collects user files that were deleted or overwritten by the program
+/data/backups/*

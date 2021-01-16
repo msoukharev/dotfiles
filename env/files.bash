@@ -16,3 +16,7 @@ function __dotfile_source_path() {
         return 1
     fi
 }
+
+function __exists() {
+    return $(ls -a $1 >/dev/null 2>&1)
+}

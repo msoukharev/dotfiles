@@ -1,7 +1,7 @@
 # Conveniences for venv
 alias venv="python3 -m venv"
 alias venvs="venv --system-site-packages"
-alias va="source env/bin/activate $@"
+alias va="source env/bin/activate"
 alias vd="deactivate"
 
 # Conveniences for pip

@@ -32,7 +32,7 @@ function __isin() {
     str=$1
     shift
     for arg in $@; do
-        [[ $str == $arg ]] && return 0
+        [ "$str" = "$arg" ] && return 0
     done
     return 1
 }
