@@ -26,6 +26,12 @@ function load_plugins()
     done
 }
 
+# Load user dotfiles
+function load_user_rcfiles()
+{
+    __dotfile_source_path user/rcfiles
+}
+
 # iTerm2 integration
 function integrate_iterm() 
 {
@@ -44,6 +50,7 @@ __dotfile_source_path scripts
 
 load_theme
 load_plugins
+load_user_rcfiles
 integrate_iterm
 
-unset load_theme load_plugins integrate_iterm
+unset load_theme load_plugins integrate_iterm load_user_rcfiles
