@@ -1,8 +1,8 @@
 # Link contents of a script to a target script
 # via '#%import script_name' command.
 # The utility scripts are located in $DOTFILE_PATH/lib directory.
-function linker {
-
+function linker() 
+{
     script_loc=$DOTFILE_PATH/lib
     target=$1
     imports=$(cat $target | grep '^#%import' | sed 's/^#%import\ //')
@@ -30,5 +30,4 @@ function linker {
     mv linker.tmp $target
 
     return errno
-
 }

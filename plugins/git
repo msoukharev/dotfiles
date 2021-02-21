@@ -1,0 +1,12 @@
+# Git aliases and tools
+
+alias status="git status"
+alias branch="git branch"
+alias checkout="git checkout"
+alias checkout:new="git chechout -b"
+alias add="git add"
+alias commit="git commit"
+alias grm="git rm"
+alias gmv="git mv"
+alias push="git push"
+alias pull="git pull"

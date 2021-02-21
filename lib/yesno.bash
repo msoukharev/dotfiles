@@ -2,7 +2,8 @@
 # True if yes
 # False if no
 # If wring input, will ask again
-function yesno() {
+function yesno() 
+{
     echo -n "${@} [y/N]: "
     read ans
     case $ans in 

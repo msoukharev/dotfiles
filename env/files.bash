@@ -1,7 +1,8 @@
 # Sources files in $DOTFILE_PATH.
 # If provided a path to a directoty, sources the files inside the directoty
 # If provided a path to a file, sources the file
-function __dotfile_source_path() {
+function __dotfile_source_path()
+{
     inside_path=$(sed 's/\ /\//g' <<< $@)
     source_path=$DOTFILE_PATH/$inside_path
     if [ -d $source_path ]; then
@@ -17,6 +18,7 @@ function __dotfile_source_path() {
     fi
 }
 
-function __exists() {
+function __exists()
+{
     return $(ls -a $1 >/dev/null 2>&1)
 }
