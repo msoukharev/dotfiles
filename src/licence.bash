@@ -66,3 +66,5 @@ function licence() {
     return 0
 
 }
+
+alias license="licence"
