@@ -1,5 +1,13 @@
+.DS_Store
+
 # These themes can be add by user
 /themes/user/*
 
 # Backups collects user files that were deleted or overwritten by the program
 /data/backups/*
+
+# Place files and directories you wish to sync with the home folder
+user/copy/*
+
+# Place the files you wish to source on startup
+user/rcfiles/*
