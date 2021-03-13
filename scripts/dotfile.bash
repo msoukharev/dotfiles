@@ -13,8 +13,8 @@ function dotfile()
         # Option scope
         case $2 in
         "home")
-            for entry in `ls $DOTFILE_PATH/user/copy`; do
-                cp $DOTFILE_PATH/user/copy/$entry ${HOME}/
+            for entry in `ls -a $DOTFILE_PATH/user/copy`; do
+                cp -r $DOTFILE_PATH/user/copy/$entry ${HOME}
             done
             ;;
         "dotfile")
