@@ -1,0 +1,24 @@
+# function __git_list_local_branches()
+# {
+#     echo `git rev-parse --abbrev-ref HEAD >/dev/null 2>&1 && echo $(git for-each-ref --format='%(refname:short)' refs/heads) || :`
+# }
+
+function __git_br()
+{
+    if git rev-parse --abbrev-ref HEAD >/dev/null 2>&1; then
+        br=$(git rev-parse --abbrev-ref HEAD)
+        br_str="%F{178}ᛆ ❮%f %F{10}${br}%f %F{178}❯%f"
+        echo "$br_str"
+    fi
+}
+
+alias __utrunc='echo ${USERNAME} | cut -c -5'
+
+if __zsh; then
+    export PROMPT='%F{178}┌── ❮ %f%F{198}$(__utrunc)%f%F{178} ❯ ↪ ❮%f %F{45}%2d%f %F{178}❯%f $(__git_br)
+%F{178}└─▶%f '
+fi
+
+if __bash; then
+    export PS1='\[\033[38;5;9m\]\u\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;7m\][\[$(tput sgr0)\]\[\033[38;5;14m\]\W\[$(tput sgr0)\]\[\033[38;5;7m\]]\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;1178m\]\A\[$(tput sgr0)\] $(__git_display_branches_ps)\n\[$(tput sgr0)\]\[\033[38;5;83m\]\$\[$(tput sgr0)\] '
+fi
