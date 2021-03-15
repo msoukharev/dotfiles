@@ -35,7 +35,6 @@ DOTFILE_PATH=${HOME}/.dotfile
 
 # This line loads a pre-configured themes of your choice
 # Themes are stored in \$DOTFILE_PATH/themes
-theme=default2
 
 # Specify the plugins you wish to be loaded.
 # Array with '@' indicates you wish to load them all
@@ -48,7 +47,7 @@ source $DOTFILE_PATH/dotfile.bash
 ###########################################
 
 # User settings:
-    
+
 "
 
 function bash_setup()
