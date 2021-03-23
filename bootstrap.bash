@@ -5,7 +5,7 @@
 
 # Source dependencies
 for file in $(ls $DOTFILE_PATH/env); do
-    source ${DOTFILE_PATH}/env/${file}
+    source ${DOTFILE_PATH}/env.bash
 done
 
 # Creates a file and puts an existing file into a backup directory
@@ -54,18 +54,18 @@ function bash_setup()
 {
     __linux && rcfile=${HOME}/.bashrc
     __macos && rcfile=${HOME}/.bash_profile
-    new_file $rcfile
+    newfile $rcfile
     echo $rcfile_autogen > $rcfile
 }
 
 function zsh_setup()
 {
     rcfile=${HOME}/.zshrc
-    new_file $rcfile
+    newfile $rcfile
     echo $rcfile_autogen > $rcfile
 }
 
 bash_setup
 setup_zsh
 
-unset bash_setup zsh_setup new_file
+unset bash_setup zsh_setup newfile
