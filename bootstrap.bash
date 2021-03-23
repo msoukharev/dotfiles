@@ -66,6 +66,6 @@ function zsh_setup()
 }
 
 bash_setup
-setup_zsh
+zsh_setup
 
 unset bash_setup zsh_setup newfile
