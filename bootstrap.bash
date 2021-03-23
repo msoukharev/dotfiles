@@ -4,7 +4,7 @@
 [ -n $DOTFILE_PATH ] && export DOTFILE_PATH=${HOME}/.dotfile
 
 # Source dependencies
-for file in $(ls $DOTFILE_PATH/env); do
+for file in $(ls $DOTFILE_PATH); do
     source ${DOTFILE_PATH}/env.bash
 done
 
@@ -14,7 +14,7 @@ function newfile()
     new_file=$1
     if [ -f $new_file ]; then
         backup_dir=$DOTFILE_PATH/data/backups
-        mkdir -p $backup_dir >/dev/null 2>&1
+        mkdir --parents $backup_dir >/dev/null 2>&1
         backup_file=$backup_dir/$(basename $new_file)_$(date | sed s/\ /_/g)
         echo -e "Moving original $new_file as: \n $backup_file\n"
         mv $new_file $backup_file
