@@ -1,4 +1,8 @@
+# Disable default prompt message from virtualenv
 export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+# Enable prompt substitution for zsh
+__zsh && setopt PROMPT_SUBST
 
 function __git_br()
 {

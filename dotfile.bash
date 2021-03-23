@@ -18,19 +18,6 @@ function project_source()
 # Source project dependencies
 project_source env.bash
 
-# Allow dynamic prompt for zsh
-__zsh && setopt PROMPT_SUBST
-
-# Sources available themes (TO BE REDESIGNED IN THE FUTURE)
-# function load_theme()
-# {
-    # if [ -n $theme ]; then
-        # project_source themes user $theme >/dev/null 2>&1 \
-            # || project_source themes $theme >/dev/null 2>&1 \
-            # || project_source themes default >/dev/null 2>&1 \
-            # || echo "Could not load a theme"
-    # fi
-# }
 
 # Loads enabled plugins
 function load_plugins()
