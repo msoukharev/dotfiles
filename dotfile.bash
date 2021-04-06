@@ -18,7 +18,6 @@ function project_source()
 # Source project dependencies
 project_source env.bash
 
-
 # Loads enabled plugins
 function load_plugins()
 {
@@ -47,11 +46,8 @@ function integrate_iterm()
     fi
 }
 
-# Source callable scripts
-project_source scripts
+__inter && (project_source scripts & load_plugins)
 
-# load_theme
-load_plugins
 load_user_rcfiles
 integrate_iterm
 
