@@ -36,10 +36,7 @@ function __yesno()
     esac
 }
 
-function __git_current_branch()
-{
-    git rev-parse --abbrev-ref HEAD >/dev/null 2>&1 && echo $(git rev-parse --abbrev-ref HEAD) || :
-}
+alias __git_current_branch='git rev-parse --abbrev-ref HEAD >/dev/null 2>&1 && echo $(git rev-parse --abbrev-ref HEAD) || :'
 
 function __truncate()
 {
@@ -54,27 +51,9 @@ function __truncate()
     fi
 }
 
-function __macos()
-{
-    grep darwin <<< $OSTYPE >/dev/null 2>&1
-}
-
-function __linux()
-{
-    grep linux <<< $OSTYPE >/dev/null 2>&1
-}
-
-function __shell()
-{
-    echo $(basename $SHELL)
-}
-
-function __bash()
-{
-    [ "$(__shell)" = "bash" ]
-}
-
-function __zsh()
-{
-    [ "$(__shell)" = "zsh" ]
-}
+alias __macos='grep darwin <<< $OSTYPE >/dev/null 2>&1'
+alias __linux='grep linux <<< $OSTYPE >/dev/null 2>&1'
+alias __shell='echo $(basename $SHELL)'
+alias __bash='[ "$(__shell)" = "bash" ]'
+alias __zsh='[ "$(__shell)" = "zsh" ]'
+alias __intrc='return [[ $- == *i* ]]'
