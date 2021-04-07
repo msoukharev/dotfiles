@@ -46,7 +46,8 @@ function integrate_iterm()
     fi
 }
 
-__inter && (project_source scripts & load_plugins)
+__intrc && project_source scripts
+__intrc && load_plugins
 
 load_user_rcfiles
 integrate_iterm
