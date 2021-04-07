@@ -1,0 +1,64 @@
+# build source distribution
+function stpbs()
+{
+    if [ $# -eq 0 ]; then
+        setup=setup.py
+    else
+        setup=$1
+    fi
+    python $setup sdist
+}
+
+# build wheel
+function stpbw()
+{
+    if [ $# -eq 0 ]; then
+        setup=setup.py
+    else
+        setup=$1
+    fi
+    python $setup bdist_wheel
+}
+
+# build from source
+function stpb()
+{
+    if [ $# -eq 0 ]; then
+        setup=setup.py
+    else
+        setup=$1
+    fi
+    python $setup build
+}
+
+# install
+function stpin()
+{
+    if [ $# -eq 0 ]; then
+        package=.
+    else
+        package=$1
+    fi
+    pip install -e $package
+}
+
+# build-install all
+function stpbi()
+{
+    if [ $# -eq 0 ]; then
+        setup=setup.py
+    else
+        setup=$1
+    fi
+    stpbs ; stpbw ; stpb ; stpin
+}
+
+function stpr()
+{
+    if [ $# -eq 0]; then
+        requirements="requirements.txt"
+    else
+        requirements=$2
+    fi
+    pip install $requirements
+}
