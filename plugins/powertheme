@@ -4,7 +4,7 @@ export VIRTUAL_ENV_DISABLE_PROMPT=1
 # Enable prompt substitution for zsh
 __zsh && setopt PROMPT_SUBST
 
-function __git_br()
+function __ps_git()
 {
     if git rev-parse --abbrev-ref HEAD >/dev/null 2>&1; then
         br=$(git rev-parse --abbrev-ref HEAD)
@@ -13,10 +13,19 @@ function __git_br()
     fi
 }
 
+function __ps_venv()
+{
+    if [ -n "$VIRTUAL_ENV" ]; then
+        venv=$(basename $VIRTUAL_ENV)
+        ps_str="%F{178}⚕︎ ❮%f %F{33}${venv}%f %F{178}❯%f"
+        echo "$ps_str"
+    fi
+}
+
 alias __utrunc='echo ${USERNAME} | cut -c -5'
 
 if __zsh; then
-    export PROMPT='%F{178}┌── ❮ %f%F{198}$(__utrunc)%f%F{178} ❯ ↪ ❮%f %F{45}%2d%f %F{178}❯%f $(__git_br)
+    export PROMPT='%F{178}┌── ❮ %f%F{198}$(__utrunc)%f%F{178} ❯ ↪ ❮%f %F{45}%2d%f %F{178}❯%f $(__ps_git)$(__ps_venv)
 %F{178}└─▶%f '
 fi
 
